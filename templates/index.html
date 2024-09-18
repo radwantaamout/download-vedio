@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أداة تنزيل الفيديوهات بجودة عالية</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <form action="/download" method="post">
+            <input type="text" name="url" placeholder="أدخل رابط الفيديو" required>
+            <select name="quality">
+                <option value="bestvideo[height<=4320]+bestaudio/best">8K</option>
+                <option value="bestvideo[height<=2160]+bestaudio/best">4K</option>
+                <option value="bestvideo[height<=1440]+bestaudio/best">1440p</option>
+                <option value="bestvideo[height<=1080]+bestaudio/best">1080p</option>
+                <option value="bestvideo[height<=720]+bestaudio/best">720p</option>
+                <option value="bestvideo[height<=480]+bestaudio/best">480p</option>
+                <option value="bestvideo[height<=360]+bestaudio/best">360p</option>
+            </select>
+            <button type="submit">تنزيل</button>
+        </form>
+        {% if error %}
+        <div class="error">{{ error }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
